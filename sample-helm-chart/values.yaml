@@ -1,0 +1,36 @@
+
+backendApp:
+ 
+  image: sujithsai/cosmo:1
+    
+      
+
+  
+  env:
+    REDIS_URI: redis://redis-svc:6379  
+
+  
+  replicaCount: 1               
+  containerPort: 8080           
+
+
+  service:
+    type: ClusterIP              
+    port: 8080                   
+
+
+
+redis:
+  
+  image:
+    repository: redis             
+    tag: latest                  
+    pullPolicy: IfNotPresent     
+
+  
+  replicaCount: 1               
+
+ 
+  service:
+    type: ClusterIP             
+    port: 6379                    
