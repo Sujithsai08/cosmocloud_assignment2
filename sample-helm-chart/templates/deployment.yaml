@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: {{ .Values.backendApp.image }}  # Correct reference
+          image: {{ .Values.backendApp.image }}  
           
           ports:
             - containerPort: {{ .Values.backendApp.containerPort }}
